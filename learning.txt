@@ -1,0 +1,66 @@
+Webservices 
+
+WSDL => XML BASED DESCRIPTIVE INTERFACE  
+
+=>Every Web service provider publishes an interface for his web services 
+=>that describes all attributes of web service 
+=>this is xml based web service 
+=> and is called WSDL
+=> Web service decsription language
+=>IT IS MACHINE READABLE AND HENCE XML BASED 
+=>it can be used to generate request and response structure
+
+==UDDI== Universal decsription,discovery and integration
+
+=>UDDI is a directory
+=>A Webservice provider publishes his Webservice
+=>through WSDL on an online directory from where 
+=> web service consumer can read 
+=> this online resgistry is called UDDI
+
+
+==SOAP== SIMPLE OBJECT ACCESS PROTOCOL
+STANDARD RULES BY W3C
+=>two types of standard and rules (1)BASIC (2)EXTENDED
+
+=>Basic Specifications
+Three basic rules to comply to become a soap service 
+1) XML based communication ==> Common Format  
+2) XML Message should be SOAP Message which means the message should consist of 
+    (ENVELOPE) (HEADER) (BODY)
+    ENVELOPE => ROOT ELEMENT
+    HEADER => AUTH / Optional 
+    BODY => Actual Message / Request / Parms 
+
+3)
+
+
+
+
+
+
+
+/**/
+WSDL 
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsc="http://localhost:8000/wscalc1">
+  <soapenv:Header/>
+  <soapenv:Body>
+     <wsc:multiplicar>
+        <a>2</a>
+        <b>3</b>
+     </wsc:multiplicar>
+  </soapenv:Body>
+</soapenv:Envelope>
+
+RESPONSE 
+
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  xmlns:tns="http://localhost:8000/wscalc1">
+    <soap:Body>
+        <tns:multiplicarResponse>
+            <tns:mulres>6</tns:mulres>
+        </tns:multiplicarResponse>
+    </soap:Body>
+</soap:Envelope>
